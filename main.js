@@ -136,7 +136,7 @@ function setupProgressBar() {
         progressFill.style.width = `${progress}%`;
         progressPercentage.textContent = `${Math.round(progress)}% completado`;
         
-        // Opcional: animación suave
+        // Animación suave
         setTimeout(() => {
             progressFill.style.transition = 'width 1s ease-in-out';
         }, 100);
