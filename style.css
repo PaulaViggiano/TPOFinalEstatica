@@ -65,7 +65,9 @@ img {
     margin: 0 auto;
     padding: 0 15px;
 }
+/* ===== FIN RESET Y ESTILOS BASE ===== */
 
+/* ============ BOTONES ============ */
 .btn {
     display: inline-block;
     background-color: var(--primary);
@@ -96,6 +98,8 @@ img {
     background-color: #e55a5a;
 }
 
+/* =========== FIN BOTONES =========== */
+/* ============ SECTION ============ */
 .section {
     padding: 80px 0;
 }
@@ -131,6 +135,7 @@ img {
     max-width: 700px;
     margin: 0 auto;
 }
+/* ============ FIN SECTION ============ */
 
 /* ===== HEADER Y NAVBAR ===== */
 header {
@@ -214,7 +219,7 @@ header {
     cursor: pointer;
 }
 
-/* ===== FOOTER ===== */
+/* ============ FOOTER ============ */
 footer {
     background-color: var(--dark);
     color: var(--white);
@@ -291,9 +296,9 @@ footer {
     color: #b2b2b2;
     font-size: 0.9rem;
 }
+/* ============ FIN FOOTER ============ */
 
-/* ===== ESTILOS ESPECÍFICOS PARA INDEX.HTML ===== */
-/* Hero Section */
+/*============ Hero Section INDEX ============ */
 .hero {
     background: linear-gradient(135deg, rgba(106, 13, 173, 0.9) 0%, rgba(78, 205, 196, 0.85) 100%);
     height: 100vh;
@@ -330,8 +335,9 @@ footer {
     gap: 20px;
     flex-wrap: wrap;
 }
+/* ============ FIN Hero Section INDEX ============ */
 
-/* Método Tiempo Cards */
+/* ============ Método Tiempo Cards ============ */
 .method-cards {
     display: flex;
     flex-wrap: wrap;
@@ -381,8 +387,9 @@ footer {
     margin-right: 10px;
     font-weight: bold;
 }
+/* ============ FIN Método Tiempo Cards ============ */
 
-/* Barra de Progreso */
+/* ============ Barra de Progreso ============ */
 .progress-section {
     background-color: var(--light);
 }
@@ -414,7 +421,7 @@ footer {
     height: 100%;
     background: linear-gradient(90deg, var(--accent), var(--primary));
     border-radius: 10px;
-    width: 35%; /* Valor dinámico que se actualizará con JS */
+    width: 35%; /* Valor dinámico que se actualiza con JS */
     transition: width 0.5s ease;
 }
 
@@ -443,8 +450,8 @@ footer {
     font-size: 2.5rem;
     margin-bottom: 15px;
 }
-
-/* ===== ESTILOS PARA CURSOS.HTML ===== */
+/* ============ FIN Barra de Progreso ============ */
+/* ============ CURSOS ============ */
 .courses-hero {
     padding: 150px 0 80px;
     text-align: center;
@@ -500,7 +507,8 @@ footer {
     color: var(--primary);
     margin-right: 8px;
 }
-
+/* ============ FIN CURSOS ============ */
+/* ============ Testimonios ============ */
 .testimonials {
     background-color: var(--light);
 }
@@ -527,8 +535,8 @@ footer {
     display: flex;
     align-items: center;
 }
-
-/* ===== ESTILOS PARA METODO ===== */
+/* ============ FIN Testimonios ============ */
+/* ===== METODO Tiempo ===== */
 .method-hero {
     padding: 150px 0 80px;
     text-align: center;
@@ -600,7 +608,7 @@ footer {
     margin-bottom: 20px;
 }
 
-/* ===== ESTILOS PARA CONTACTO ===== */
+/* ===== CONTACTO ===== */
 .contact-hero {
     padding: 150px 0 80px;
     text-align: center;
@@ -676,7 +684,7 @@ footer {
     box-shadow: 0 5px 15px rgba(0,0,0,0.05);
 }
 
-/* ===== ESTILOS PARA LOGIN ===== */
+/* ===== LOGIN ===== */
 .login-section {
     padding: 150px 0 80px;
     background-color: var(--light);
@@ -826,7 +834,7 @@ footer {
     margin: 0 auto;
 }
 
-/* ===== INTERRUPTOR DE TEMA ===== */
+/* ===== CLARO OSCURO ===== */
 .theme-toggle {
     margin-left: 20px;
 }
