@@ -826,6 +826,55 @@ footer {
     margin: 0 auto;
 }
 
+/* ===== INTERRUPTOR DE TEMA ===== */
+.theme-toggle {
+    margin-left: 20px;
+}
+
+.theme-label {
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 60px;
+    height: 30px;
+    background-color: var(--gray);
+    border-radius: 15px;
+    cursor: pointer;
+    padding: 3px;
+}
+
+.toggle-ball {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    background-color: var(--white);
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+    left: 3px;
+}
+
+#theme-toggle:checked + .theme-label .toggle-ball {
+    transform: translateX(30px);
+}
+
+.sun-icon, .moon-icon {
+    font-size: 16px;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+}
+
+.sun-icon {
+    margin-right: 5px;
+}
+
+.moon-icon {
+    margin-left: 5px;
+}
+
 /* ===== MODO OSCURO ===== */
 .dark-mode {
     --primary: #8a4baf;
@@ -876,51 +925,89 @@ footer {
     color: #ffffff;
 }
 
-/* ===== INTERRUPTOR DE TEMA ===== */
-.theme-toggle {
-    margin-left: 20px;
+/* ===== DASHBOARD ===== */
+.dashboard {
+    padding: 100px 0 50px;
 }
 
-.theme-label {
+.profile-header {
     display: flex;
     align-items: center;
-    position: relative;
-    width: 60px;
-    height: 30px;
-    background-color: var(--gray);
-    border-radius: 15px;
-    cursor: pointer;
-    padding: 3px;
+    gap: 40px;
+    margin-bottom: 50px;
 }
 
-.toggle-ball {
-    position: absolute;
-    width: 24px;
-    height: 24px;
-    background-color: var(--white);
+.profile-avatar {
+    text-align: center;
+}
+
+.profile-avatar img {
+    width: 150px;
+    height: 150px;
     border-radius: 50%;
-    transition: transform 0.3s ease;
-    left: 3px;
+    object-fit: cover;
+    margin-bottom: 15px;
+    border: 5px solid var(--primary);
 }
 
-#theme-toggle:checked + .theme-label .toggle-ball {
-    transform: translateX(30px);
+.profile-info h2 {
+    margin-bottom: 10px;
+    color: var(--primary);
 }
 
-.sun-icon, .moon-icon {
-    font-size: 16px;
-    width: 24px;
-    height: 24px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 1;
+.profile-info p {
+    margin-bottom: 5px;
+    color: var(--gray);
 }
 
-.sun-icon {
-    margin-right: 5px;
+.course-progress {
+    margin: 20px 0;
 }
 
-.moon-icon {
-    margin-left: 5px;
+.course-progress .progress-bar {
+    height: 10px;
+    margin-bottom: 8px;
+}
+
+.course-progress span {
+    display: block;
+    text-align: right;
+    font-size: 0.9rem;
+    color: var(--gray);
+}
+
+.btn-edit {
+    background-color: var(--gray);
+}
+
+.btn-edit:hover {
+    background-color: #5a6268;
+}
+
+.achievements-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.achievement-card {
+    text-align: center;
+    padding: 20px;
+    background-color: var(--light);
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.achievement-icon {
+    font-size: 3rem;
+    margin-bottom: 15px;
+}
+
+/* Modo oscuro para dashboard */
+.dark-mode .profile-avatar img {
+    border-color: var(--accent);
+}
+
+.dark-mode .achievement-card {
+    background-color: #2a2a3a;
 }

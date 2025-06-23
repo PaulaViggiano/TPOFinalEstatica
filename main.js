@@ -1,6 +1,6 @@
-// ===== FUNCIONES GENERALES =====
+// ===== FUNCIONES PRINCIPALES =====
 
-// 1. Cambiar entre modo claro y oscuro
+// 1. Modo claro/oscuro
 function setupThemeToggle() {
     const themeToggle = document.getElementById('theme-toggle');
     const body = document.body;
@@ -29,7 +29,7 @@ function setupThemeToggle() {
     }
 }
 
-// 2. Validación básica de formularios
+// 2. Validación de formularios
 function setupFormValidation() {
     // Formulario de contacto
     const contactForm = document.getElementById('contactForm');
@@ -41,6 +41,9 @@ function setupFormValidation() {
             const email = document.getElementById('email');
             const message = document.getElementById('message');
             let isValid = true;
+            
+            // Resetear errores
+            resetErrors([name, email, message]);
             
             // Validar nombre
             if (!name.value.trim()) {
@@ -81,6 +84,9 @@ function setupFormValidation() {
             const password = document.getElementById('login-password');
             let isValid = true;
             
+            // Resetear errores
+            resetErrors([email, password]);
+            
             // Validar email
             if (!email.value.trim()) {
                 showError(email, 'Por favor ingresa tu email');
@@ -108,101 +114,75 @@ function setupFormValidation() {
 }
 
 // 3. Barra de progreso
+// En la función setupProgressBar, actualiza para que funcione en el dashboard
 function setupProgressBar() {
     const progressFill = document.getElementById('progress-fill');
     const progressPercentage = document.getElementById('progress-percentage');
     
     if (progressFill && progressPercentage) {
-        // Simular progreso del 35%
-        const progress = 35;
+        // Calcular progreso general basado en cursos
+        const courses = document.querySelectorAll('.course-card');
+        let totalProgress = 0;
+        
+        courses.forEach(course => {
+            const progressFill = course.querySelector('.progress-fill');
+            const width = parseFloat(progressFill.style.width);
+            totalProgress += isNaN(width) ? 0 : width;
+        });
+        
+        const progress = courses.length > 0 ? totalProgress / courses.length : 0;
         
         // Actualizar visualmente
         progressFill.style.width = `${progress}%`;
-        progressPercentage.textContent = `${progress}% completado`;
+        progressPercentage.textContent = `${Math.round(progress)}% completado`;
+        
+        // Opcional: animación suave
+        setTimeout(() => {
+            progressFill.style.transition = 'width 1s ease-in-out';
+        }, 100);
     }
 }
 
 // 4. Funcionalidad de FAQ
 function setupFAQ() {
-    const faqItems = document.querySelectorAll('.faq-item h3');
+    const faqItems = document.querySelectorAll('.faq-item');
     
-    faqItems.forEach(question => {
-        question.addEventListener('click', function() {
-            const answer = this.nextElementSibling;
-            
-            // Cerrar todas las respuestas
-            document.querySelectorAll('.faq-answer').forEach(ans => {
-                if (ans !== answer) {
-                    ans.style.display = 'none';
-                    ans.parentElement.classList.remove('active');
-                }
+    faqItems.forEach(item => {
+        const question = item.querySelector('h3');
+        
+        if (question) {
+            question.addEventListener('click', () => {
+                // Cerrar todas las demás preguntas
+                faqItems.forEach(otherItem => {
+                    if (otherItem !== item) {
+                        otherItem.classList.remove('active');
+                    }
+                });
+                
+                // Alternar la pregunta actual
+                item.classList.toggle('active');
             });
-            
-            // Alternar la respuesta actual
-            if (answer.style.display === 'block') {
-                answer.style.display = 'none';
-                this.parentElement.classList.remove('active');
-            } else {
-                answer.style.display = 'block';
-                this.parentElement.classList.add('active');
-            }
-        });
+        }
     });
 }
 
-// 5. Menú de navegación
-function setupNavigation() {
-    // Resaltar página activa
-    const currentPage = location.pathname.split('/').pop();
+// 5. Navegación activa
+function setupActiveNavigation() {
     const navLinks = document.querySelectorAll('.nav-menu a');
+    const currentPage = location.pathname.split('/').pop();
     
     navLinks.forEach(link => {
         const linkPage = link.getAttribute('href');
+        
         if (linkPage === currentPage) {
             link.classList.add('active');
+        } else {
+            link.classList.remove('active');
         }
     });
-    
-    // Menú móvil simple
-    const menuToggle = document.querySelector('.nav-toggle');
-    if (menuToggle) {
-        menuToggle.addEventListener('click', function() {
-            const navMenu = document.querySelector('.nav-menu');
-            navMenu.classList.toggle('show');
-        });
-    }
 }
 
 // ===== FUNCIONES AUXILIARES =====
-
-// Mostrar error en formulario
-function showError(input, message) {
-    const formGroup = input.closest('.form-group');
-    
-    // Limpiar errores anteriores
-    const existingError = formGroup.querySelector('.error-message');
-    if (existingError) existingError.remove();
-    
-    // Crear mensaje de error
-    const errorElement = document.createElement('p');
-    errorElement.className = 'error-message';
-    errorElement.textContent = message;
-    errorElement.style.color = '#ff6b6b';
-    errorElement.style.marginTop = '5px';
-    errorElement.style.fontSize = '0.9rem';
-    
-    // Añadir después del input
-    formGroup.appendChild(errorElement);
-    
-    // Resaltar input
-    input.style.borderColor = '#ff6b6b';
-    
-    // Eliminar error después de 3 segundos
-    setTimeout(() => {
-        errorElement.remove();
-        input.style.borderColor = '';
-    }, 3000);
-}
 
 // Validar formato de email
 function isValidEmail(email) {
@@ -210,11 +190,42 @@ function isValidEmail(email) {
     return re.test(email);
 }
 
+// Mostrar error en formulario
+function showError(input, message) {
+    const formGroup = input.closest('.form-group');
+    if (!formGroup) return;
+    
+    const error = document.createElement('p');
+    error.className = 'error-message';
+    error.textContent = message;
+    error.style.color = '#ff6b6b';
+    error.style.marginTop = '5px';
+    error.style.fontSize = '0.9rem';
+    
+    formGroup.appendChild(error);
+    input.style.borderColor = '#ff6b6b';
+}
+
+// Resetear errores
+function resetErrors(inputs) {
+    inputs.forEach(input => {
+        input.style.borderColor = '';
+        const formGroup = input.closest('.form-group');
+        if (formGroup) {
+            const error = formGroup.querySelector('.error-message');
+            if (error) error.remove();
+        }
+    });
+}
+
+
 // ===== INICIALIZAR TODO CUANDO LA PÁGINA CARGA =====
 document.addEventListener('DOMContentLoaded', function() {
     setupThemeToggle();
     setupFormValidation();
     setupProgressBar();
     setupFAQ();
-    setupNavigation();
+    setupActiveNavigation();
+
 });
+
