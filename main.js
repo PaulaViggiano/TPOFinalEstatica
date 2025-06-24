@@ -115,7 +115,7 @@ function setupFormValidation() {
             if (isValid) {
                 alert('Inicio de sesión exitoso. Redirigiendo...');
                 setTimeout(() => {
-                    window.location.href = 'index.html';
+                    window.location.href = 'dashboard.html';
                 }, 1000);
             }
         });
