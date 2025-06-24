@@ -2,7 +2,7 @@
 
 //Barra de progreso del index
 document.addEventListener('DOMContentLoaded', function() {
-    const progreso = 65; // Valor real del progreso (ej: 65%)
+    const progreso = 65; 
     const barra = document.getElementById('progress-simulacion');
     barra.style.width = `${progreso}%`;
     barra.setAttribute('aria-valuenow', progreso);
@@ -122,7 +122,7 @@ function setupFormValidation() {
     }
 }
 
-// Barra de progreso de mi perfil
+// Barra de progreso del Dashboard
 // En la función setupProgressBar, actualiza para que funcione en el dashboard
 function setupProgressBar() {
     const progressFill = document.getElementById('progress-fill');
@@ -191,8 +191,6 @@ function setupActiveNavigation() {
     });
 }
 
-// ===== FUNCIONES AUXILIARES =====
-
 // Validar formato de email
 function isValidEmail(email) {
     const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -226,7 +224,6 @@ function resetErrors(inputs) {
         }
     });
 }
-
 
 // ===== INICIALIZA TODA LA PÁGINA CUANDO CARGA =====
 document.addEventListener('DOMContentLoaded', function() {
