@@ -843,7 +843,7 @@ footer {
     margin: 0 auto;
 }
 
-/* ===== CLARO OSCURO ===== */
+/* ===== MODO CLARO ===== */
 .theme-toggle {
     margin-left: 20px;
 }
@@ -928,14 +928,18 @@ footer {
 
 .dark-mode .form-group input,
 .dark-mode .form-group select,
-.dark-mode .form-group textarea {
+.dark-mode .form-group textarea{
     background-color: #2a2a3a;
     border-color: #444;
     color: var(--gray);
 }
 
 .dark-mode .footer-links a {
-    color: #d0d0d0;
+    color: var(--light);
+}
+
+.dark-mode p {
+    color: var(--light);
 }
 
 .dark-mode .footer-links a:hover {
