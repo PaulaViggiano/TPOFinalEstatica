@@ -228,7 +228,7 @@ function resetErrors(inputs) {
 }
 
 
-// ===== INICIALIZAR TODO CUANDO LA PÁGINA CARGA =====
+// ===== INICIALIZA TODA LA PÁGINA CUANDO CARGA =====
 document.addEventListener('DOMContentLoaded', function() {
     setupThemeToggle();
     setupFormValidation();
