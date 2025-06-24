@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>La Tía de la IA - Inicio</title>
 </head>
+
 <body>
     <header>
         <div class="container">
@@ -23,7 +25,7 @@
                     <li><a href="html/login.html">Login</a></li>
                 </ul>
                 <div class="theme-toggle">
-                 <input type="checkbox" id="theme-toggle" hidden>
+                    <input type="checkbox" id="theme-toggle" hidden>
                     <label for="theme-toggle" class="theme-label">
                         <span class="sun-icon">☀️</span>
                         <span class="moon-icon">🌙</span>
@@ -39,7 +41,8 @@
             <div class="container">
                 <div class="hero-content">
                     <h1>Acercando mujeres al mundo de la Inteligencia Artificial</h1>
-                    <p>Un espacio seguro, inclusivo y fácil de entender donde aprenderás a crear prompts efectivos y usar herramientas de IA estratégicamente.</p>
+                    <p>Un espacio seguro, inclusivo y fácil de entender donde aprenderás a crear prompts efectivos y
+                        usar herramientas de IA estratégicamente.</p>
                     <div class="hero-buttons">
                         <a href="html/login.html" class="btn">Comenzar ahora</a>
                         <a href="html/cursos.html" class="btn">Ver cursos</a>
@@ -54,35 +57,38 @@
                     <h2>El Método Tiempo</h2>
                     <p>Un sistema de aprendizaje flexible y progresivo diseñado para tu éxito</p>
                 </div>
-                
+
                 <div class="method-cards">
-                    <div class="method-card">
-                        <div class="method-card-image">
-                            <img src="img/flexible.jpg" alt="Aprendizaje Flexible">
+                    <div class="card h-100">
+                        <div class="card-img-container">
+                            <img src="./img/flexible.jpg" class="card-img-top" alt="Aprendizaje Flexible">
                         </div>
-                        <div class="method-card-content">
-                            <h3>Aprendizaje Flexible</h3>
-                            <p>Estudia a tu propio ritmo, sin presiones. Adapta tu formación a tu vida, no al revés. Nuestro método se ajusta a tu disponibilidad.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="method-card">
-                        <div class="method-card-image">
-                            <img src="img/progresionconstante.jpg" alt="Progresión Constante">
-                        </div>
-                        <div class="method-card-content">
-                            <h3>Progresión Constante</h3>
-                            <p>Contenido secuencial que garantiza una comprensión sólida. Cada lección construye sobre la anterior, creando una base de conocimiento robusta.</p>
+                        <div class="card-body bg-dark text-light"> <!-- Parte inferior oscura -->
+                            <h5 class="card-title">Aprendizaje Flexible</h5>
+                            <p class="card-text">Estudia a tu propio ritmo, sin presiones. Adapta tu formación a tu vida, no al revés.
+                                Nuestro método se ajusta a tu disponibilidad.</p>
                         </div>
                     </div>
-                    
-                    <div class="method-card">
-                        <div class="method-card-image">
-                            <img src="img/ComunidadInclusiva.jpg" alt="Comunidad Inclusiva">
+                    <div class="card h-100">
+                        <div class="card-img-container">
+                            <img src="./img/progresionconstante.jpg" class="card-img-top" alt="Progresion Constante">
                         </div>
-                        <div class="method-card-content">
-                            <h3>Comunidad Inclusiva</h3>
-                            <p>Un espacio seguro donde todas son bienvenidas, sin importar tu nivel previo. Aprende, colabora y crece con otras mujeres apasionadas por la IA.</p>
+                        <div class="card-body bg-dark text-light"> <!-- Parte inferior oscura -->
+                            <h5 class="card-title">Progresión Constante</h5>
+                            <p class="card-text">Contenido secuencial que garantiza una comprensión sólida. Cada lección construye sobre
+                                la anterior, creando una base de conocimiento robusta.</p>
+                        </div>
+                    </div>
+
+
+                    <div class="card h-100">
+                        <div class="card-img-container">
+                            <img src="img/ComunidadInclusiva.jpg" class="card-img-top" alt="Comunidad Inclusiva">
+                        </div>
+                        <div class="card-body bg-dark text-light">
+                            <h5 class="card-text">Comunidad Inclusiva</h5>
+                            <p class="card-text">Un espacio seguro donde todas son bienvenidas, sin importar tu nivel previo. Aprende,
+                                colabora y crece con otras mujeres apasionadas por la IA.</p>
                         </div>
                     </div>
                 </div>
@@ -95,30 +101,30 @@
                     <h2>Tu Progreso</h2>
                     <p>Monitorea tu avance en tiempo real y celebra tus logros</p>
                 </div>
-                
+
                 <div class="progress-container">
                     <div class="progress-header">
                         <h3>Progreso General</h3>
-                        <span id="progress-percentage">35% completado</span>
+                        <span id="progress-percentage">65% completado</span>
                     </div>
-                    
+
                     <div class="progress-bar">
-                        <div class="progress-fill" id="progress-fill"></div>
+                        <div class="progress-fill" id="progress-simulacion"></div>
                     </div>
-                    
+
                     <div class="progress-courses">
                         <div class="progress-course">
                             <div class="course-icon">📝</div>
                             <h4>Prompt Engineering</h4>
                             <p>50% completado</p>
                         </div>
-                        
+
                         <div class="progress-course">
                             <div class="course-icon">🤖</div>
                             <h4>Chatbots Avanzados</h4>
                             <p>25% completado</p>
                         </div>
-                        
+
                         <div class="progress-course">
                             <div class="course-icon">📊</div>
                             <h4>IA para Negocios</h4>
@@ -138,15 +144,20 @@
                         <img src="img/La Tía de la IA.png" alt="Logo La Tía de la IA">
                         <span class="logo-text">La Tía de la IA</span>
                     </div>
-                    <p>Democratizando el acceso a la tecnología con un espacio seguro, inclusivo y fácil de entender para todas las mujeres.</p>
+                    <p>Democratizando el acceso a la tecnología con un espacio seguro, inclusivo y fácil de entender
+                        para todas las mujeres.</p>
                     <div class="social-links">
-                        <a href="https://www.instagram.com/latiadela.ia?igsh=MTN2aG5ybmU0d3picA==" target="_blank"><img src="img/instagram.png" alt="Instagram"></a>
-                        <a href="https://www.facebook.com/share/1Z5vdjqzEi/" target="_blank"><img src="img/facebook.png" alt="Facebook"></a>
-                        <a href="https://www.linkedin.com/in/ileana-temi-finochietti-inteligenciaartificial/" target="_blank"><img src="img/linkedin.png" alt="LinkedIn"></a>
-                        <a href="https://www.youtube.com/@ileanatemi9348" target="_blank"><img src="img/youtube.png" alt="YouTube"></a>
+                        <a href="https://www.instagram.com/latiadela.ia?igsh=MTN2aG5ybmU0d3picA==" target="_blank"><img
+                                src="img/instagram.png" alt="Instagram"></a>
+                        <a href="https://www.facebook.com/share/1Z5vdjqzEi/" target="_blank"><img src="img/facebook.png"
+                                alt="Facebook"></a>
+                        <a href="https://www.linkedin.com/in/ileana-temi-finochietti-inteligenciaartificial/"
+                            target="_blank"><img src="img/linkedin.png" alt="LinkedIn"></a>
+                        <a href="https://www.youtube.com/@ileanatemi9348" target="_blank"><img src="img/youtube.png"
+                                alt="YouTube"></a>
                     </div>
                 </div>
-                
+
                 <div class="footer-column">
                     <h3>Enlaces rápidos</h3>
                     <ul class="footer-links">
@@ -157,7 +168,7 @@
                         <li><a href="html/contacto.html">Contacto</a></li>
                     </ul>
                 </div>
-                
+
                 <div class="footer-column">
                     <h3>Recursos</h3>
                     <ul class="footer-links">
@@ -168,14 +179,16 @@
                         <li><a href="html/cursos.html">Testimonios</a></li>
                     </ul>
                 </div>
-                
+
             </div>
-            
+
             <div class="footer-bottom">
-                <p>&copy; 2025 La Tía de la IA. Todos los derechos reservados. | FAI 5516 - Programación Estática y Laboratorio Web</p>
+                <p>&copy; 2025 La Tía de la IA. Todos los derechos reservados. | FAI 5516 - Programación Estática y
+                    Laboratorio Web</p>
             </div>
         </div>
     </footer>
     <script src="main.js"></script>
 </body>
+
 </html>

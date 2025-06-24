@@ -337,7 +337,21 @@ footer {
 }
 /* ============ FIN Hero Section INDEX ============ */
 
-/* ============ Método Tiempo Cards ============ */
+/* ============ Método Tiempo Cards INDEX ============ */
+.card-img-container {
+  height: 50%; /* Mitad superior para imagen */
+  overflow: hidden;
+}
+
+.card-img-top {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.card-body {
+  height: 50%; /* Mitad inferior para contenido */
+}
 .method-cards {
     display: flex;
     flex-wrap: wrap;

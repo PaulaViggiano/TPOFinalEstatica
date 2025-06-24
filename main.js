@@ -1,6 +1,15 @@
 // ===== FUNCIONES PRINCIPALES =====
 
-// 1. Modo claro/oscuro
+//Barra de progreso del index
+document.addEventListener('DOMContentLoaded', function() {
+    const progreso = 65; // Valor real del progreso (ej: 65%)
+    const barra = document.getElementById('progress-simulacion');
+    barra.style.width = `${progreso}%`;
+    barra.setAttribute('aria-valuenow', progreso);
+    barra.textContent = `${progreso}% Completado`;
+  });
+
+// Modo claro/oscuro
 function setupThemeToggle() {
     const themeToggle = document.getElementById('theme-toggle');
     const body = document.body;
@@ -29,7 +38,7 @@ function setupThemeToggle() {
     }
 }
 
-// 2. Validación de formularios
+// Validación de formularios
 function setupFormValidation() {
     // Formulario de contacto
     const contactForm = document.getElementById('contactForm');
@@ -113,7 +122,7 @@ function setupFormValidation() {
     }
 }
 
-// 3. Barra de progreso
+// Barra de progreso de mi perfil
 // En la función setupProgressBar, actualiza para que funcione en el dashboard
 function setupProgressBar() {
     const progressFill = document.getElementById('progress-fill');
